@@ -1,0 +1,21 @@
+{  
+  "name": "expire-lambda",  
+  "version": "1.0.0",
+  "private": true,
+  "keywords":["calculate","expire","date","time","finish","expiration"],
+  "description" : "Function library to calculate the date & time expiration ",
+  "homepage" : "http://github.com/dmiro/expire-lambda",
+  "author": {
+      "name": "David Miró",
+      "email": "davidmirom@hotmail.com"
+    },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dmiro/expire-lambda"
+  },
+  "scripts": { 
+      "start": "node expire-lambda.js"  
+    },  
+  "dependencies": {  
+    }  
+} 
