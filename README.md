@@ -1,4 +1,4 @@
-> ALPHA VERSION!
+> STABLE VERSION!
 
 
 expire-lambda [EN]
