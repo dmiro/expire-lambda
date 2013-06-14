@@ -17,6 +17,18 @@ Function library to calculate the date &amp; time expiration
     var expire = require('expire-lambda.js').expire;
     console.log(expire.seconds(10).getInstant().timeRemaining().inSeconds()); // 10 seconds
 
+###### example 3
+
+    var miExpire = expire.seconds(10);
+    var miInst = miExpire.getInstant();
+    setTimeout(function() {  
+        console.log('expired?:',miInst.isExpired()); // false
+        console.log('time remaining?:',miInst.timeRemaining().inSeconds()); // 8.998
+    }, expire.seconds(1).inMilliseconds());
+    setTimeout(function() {
+        console.log('expired?:',miInst.isExpired());// true
+        console.log('time remaining?:',miInst.timeRemaining().inSeconds()); // 0
+    }, expire.seconds(10).inMilliseconds());
 
 expire-lambda [ES]
 =============
@@ -33,3 +45,16 @@ Biblioteca de funciones para calcular la fecha y hora de caducidad
 
     var expire = require('expire-lambda.js').expire;
     console.log(expire.seconds(10).getInstant().timeRemaining().inSeconds()); // 10 segundos.
+
+###### ejemplo 3
+
+    var miExpire = expire.seconds(10);
+    var miInst = miExpire.getInstant();
+    setTimeout(function() {  
+        console.log('expired?:',miInst.isExpired()); // false
+        console.log('time remaining?:',miInst.timeRemaining().inSeconds()); // 8.998
+    }, expire.seconds(1).inMilliseconds());
+    setTimeout(function() {
+        console.log('expired?:',miInst.isExpired());// true
+        console.log('time remaining?:',miInst.timeRemaining().inSeconds()); // 0
+    }, expire.seconds(10).inMilliseconds());

@@ -36,7 +36,6 @@ var MyInstantDate = function(milliseconds) {
 */
 function expireFactory(lambda, acum) {  
     
-    //var miAcum = acum;
     var miResult = new MyDate(acum);
     var miFunc;
     
@@ -46,7 +45,7 @@ function expireFactory(lambda, acum) {
             };
     };
     
-    for (var i in lambda) {
+    for (var i=0;i<lambda.length;i++) {
         miFunc = lambda[i];
         if (miFunc !== undefined) {
             for (var x in miFunc.nameFuncs) {

@@ -2,20 +2,20 @@ var assert = require('assert'),
     expire = require('../expire-lambda.js').expire;
     
 console.log('> init test');
-
-assert.equal(expire.seconds(10).milliseconds(200).inMilliseconds(), 10*1000+200);  // <-- error
+ 
+assert.equal(expire.seconds(10).milliseconds(200).inMilliseconds(), 10*1000+200); 
 
 assert.equal(expire.seconds(10).inSeconds(), 10);
 assert.equal(expire.s(10).inSeconds(), 10);
 
-assert.equal(expire.days(0).hours(1).minutes(10).seconds(2).inSeconds(), 60*60+10*60+2);
-assert.equal(expire.days(0).h(1).m(10).s(2).inSeconds(), 60*60+10*60+2);
+assert.equal(expire.hours(1).minutes(10).seconds(2).inSeconds(), 60*60+10*60+2);
+assert.equal(expire.h(1).m(10).s(2).inSeconds(), 60*60+10*60+2);
 
 assert.equal(expire.days(0).hours(1).minutes(0).inSeconds(), 60*60);
-assert.equal(expire.d(0).h(1).m(0).inSeconds(), 60*60);
+assert.equal(expire.days(0).h(1).m(0).inSeconds(), 60*60);
 
-//assert.equal(expire.days(1).minutes(10).inSeconds(), 24*60*60*60+10*60);  // <-- error
-//assert.equal(expire.d(1).m(10).inSeconds(), 24*60*60*60+10*60);  // <-- error
+assert.equal(expire.days(1).minutes(10).inSeconds(), 24*60*60+10*60);  
+assert.equal(expire.d(1).m(10).inSeconds(), 24*60*60+10*60);  
 
 assert.equal(expire.days(0).hours(3).inSeconds(), 3*60*60);
 assert.equal(expire.d(0).h(3).inSeconds(), 3*60*60);
@@ -39,6 +39,10 @@ assert.notEqual(expire.d(20).h(0).m(30).s(10).getInstant(new Date("December 31, 
 assert.equal(expire.seconds(10).getInstant(new Date("December 17, 1995 03:24:00")).isExpired(), true);
 assert.equal(expire.seconds(10).getInstant(new Date("December 31, 2100 10:00:00")).isExpired(), false);
 
-console.log('> test ok');
+var miInst =expire.seconds(1).getInstant();
+setTimeout(function() {assert.equal(miInst.isExpired(),true);}, expire.seconds(2).inMilliseconds());
+var miInst =expire.seconds(2).getInstant();
+setTimeout(function() {assert.equal(miInst.isExpired(),false);}, expire.seconds(1).inMilliseconds());
+
 
 
