@@ -6,6 +6,10 @@ expire-lambda [EN]
 
 Function library to calculate the date &amp; time expiration 
 
+### Activity diagram
+
+![expire-lambda activity diagram](https://github.com/dmiro/expire-lambda/raw/master/resource/expire_activity.png)
+
 ###### example 1
 
     var expire = require('expire-lambda.js').expire;
@@ -34,6 +38,10 @@ expire-lambda [ES]
 =============
 
 Biblioteca de funciones para calcular la fecha y hora de caducidad
+
+### Diagrama de actividades
+
+![expire-lambda activity diagram](https://github.com/dmiro/expire-lambda/raw/master/resource/expire_activity.png)
 
 ###### ejemplo 1
 
