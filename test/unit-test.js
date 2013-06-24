@@ -1,5 +1,5 @@
 var assert = require('assert'),
-    expire = require('../expire-lambda.js').expire;
+    expire = require('../lib/expire-lambda.js').expire;
     
 console.log('> init test');
  
@@ -44,5 +44,4 @@ setTimeout(function() {assert.equal(miInst.isExpired(),true);}, expire.seconds(2
 var miInst =expire.seconds(2).getInstant();
 setTimeout(function() {assert.equal(miInst.isExpired(),false);}, expire.seconds(1).inMilliseconds());
 
-
-
+console.log('> end test');
