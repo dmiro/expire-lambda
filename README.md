@@ -8,7 +8,7 @@ Function library to calculate the date &amp; time expiration
 
 ### Activity diagram
 
-![expire-lambda activity diagram](https://github.com/dmiro/expire-lambda/raw/master/resource/expire_activity.png)
+![expire-lambda activity diagram](https://github.com/dmiro/expire-lambda/raw/master/resources/expire_activity.png)
 
 ###### example 1
 
