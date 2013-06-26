@@ -3,8 +3,9 @@ var assert = require('assert'),
     
 console.log('> init test');
  
+assert.equal(expire.at.d(5).inDays(), 5);
+ 
 assert.equal(expire.in.seconds(10).milliseconds(200).inMilliseconds(), 10*1000+200); 
-
 assert.equal(expire.in.seconds(10).inSeconds(), 10);
 assert.equal(expire.in.s(10).inSeconds(), 10);
 
